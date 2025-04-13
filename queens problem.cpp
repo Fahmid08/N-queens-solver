@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int n;
-vector<vector<int>> board(n,vector<int> (n,0));
+vector<vector<int>> board;
 vector<vector<int>> qindex;
 vector<vector<vector<int>>> solutions;
 int qin_i=0,qin_j=0;
@@ -74,6 +74,12 @@ if(!possible){qin_i=0;
 
 int main(){
 cin>>n;
+board=vector<vector<int>> (n,vector<int>(n,0));
+if(n==1){
+    cout<<1<<'\n';
+    cout<<1<<'\n';
+}
+else{
 while(true){
     get_candidates();
     if(qin_i==0 && qin_j==n){break;}
@@ -91,4 +97,5 @@ for(int i=0;i<solutions.size();++i){
 }
 }
 cout<<solutions.size()<<'\n';
+}
 return 0;}
