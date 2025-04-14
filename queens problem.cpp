@@ -24,6 +24,9 @@ if(is_valid_state()){
         solutions.push_back(board);
         board[n-1][qin_j]=0;
         bool possible=false;
+        if(qin_j<n-1){qin_j+=1;
+        possible=true;}
+        else{
         for(int i=qin_i-1;i>=0;--i){
     if(qindex[i][1]<n-1){
         possible=true;
@@ -36,6 +39,7 @@ if(is_valid_state()){
         break;
         }
     }
+        }
     if(!possible){qin_i=0;
               qin_j=n;
         }
@@ -75,11 +79,6 @@ if(!possible){qin_i=0;
 int main(){
 cin>>n;
 board=vector<vector<int>> (n,vector<int>(n,0));
-if(n==1){
-    cout<<1<<'\n';
-    cout<<1<<'\n';
-}
-else{
 while(true){
     get_candidates();
     if(qin_i==0 && qin_j==n){break;}
@@ -95,7 +94,6 @@ for(int i=0;i<solutions.size();++i){
         cout<<'\n';
     }
     cout<<'\n';
-}
 }
 }
 return 0;}
