@@ -84,6 +84,7 @@ while(true){
     get_candidates();
     if(qin_i==0 && qin_j==n){break;}
 }
+cout<<solutions.size()<<'\n';
 if(solutions.size()==0){cout<<"No"<<'\n';}
 else{
 for(int i=0;i<solutions.size();++i){
@@ -96,6 +97,5 @@ for(int i=0;i<solutions.size();++i){
     cout<<'\n';
 }
 }
-cout<<solutions.size()<<'\n';
 }
 return 0;}
